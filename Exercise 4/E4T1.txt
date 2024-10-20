@@ -1,0 +1,8 @@
+# Identify 2-3 changes that can be made to our environment to prevent an SSH brute force attack from the internet.
+
+1. Change the security group settings to disallow ssh connections from the internet
+2. Remove the ability to login ssh with a password
+
+# Neither instance should have had access to the secret recipes bucket; even in the instance that API credentials were compromised how could we have prevented access to sensitive data?
+
+The security policy for accessing the s3 bucket should be changed by explicitly specifying free bucket name access.

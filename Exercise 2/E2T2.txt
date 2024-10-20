@@ -1,0 +1,41 @@
+Below are the security alerts you provided along with explanations and fixes for each issue in your AWS account:
+
+1. IAM.6: Hardware MFA should be enabled for the root user
+Issue: The root account is not configured with hardware Multi-Factor Authentication (MFA).
+Solution: Enable MFA for the root account by going to IAM, selecting "Users", selecting the root account, and setting up MFA.
+
+2. IAM.9: MFA should be enabled for the root user
+Issue: The root account does not have MFA enabled.
+Solution: Follow the steps above to enable MFA.
+
+3. EC2.13: Security groups should not allow ingress from 0.0.0.0/0 or ::/0 to port 22
+Issue: The security group allows SSH access (port 22) from any IP address.
+Solution: Restrict SSH access to only specific IP addresses (e.g., your IP address).
+
+4. EC2.2: VPC default security groups should not allow inbound or outbound traffic
+Problem: The VPC default security group allows inbound and outbound traffic.
+Solution: Edit the default security group to prevent all traffic unless a specific rule is used.
+
+5. CloudTrail.1: CloudTrail should be enabled and configured with at least one multi-Region trail that includes read and write management events
+Problem: AWS CloudTrail is not enabled or does not have a multi-region configuration.
+Solution: Enable CloudTrail and create a multi-region trail to record management events.
+
+6. EC2.14: Security groups should not allow ingress from 0.0.0.0/0 or ::/0 to port 3389
+Problem: The security group allows RDP access (port 3389) from any IP address.
+Solution: Restrict RDP access to only specific IP addresses.
+
+7. EC2.6: VPC flow logging should be enabled in all VPCs
+Problem: VPC flow logging is not enabled for all VPCs.
+Solution: Enable flow logging for all VPCs to monitor network traffic.
+
+8. IAM.11 - IAM.17: Password policy does not meet security requirements
+Problem: Password policy does not require security elements such as uppercase, lowercase, symbols, numbers, minimum length, and does not allow reuse.
+Solution: Update password policy in IAM to require these security elements.
+
+9. IAM.18: Ensure a support role has been created to manage incidents with AWS Support
+Problem: No support role has been created to manage incidents with AWS Support.
+Solution: Create an IAM role for AWS Support to manage incidents.
+
+10. IAM.2: IAM users should not have IAM policies attached
+Problem: One or more IAM users have IAM policies attached.
+Solution: Review and remove unnecessary IAM policies from IAM users, or switch to using IAM groups to manage permissions.

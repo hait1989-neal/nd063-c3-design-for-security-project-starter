@@ -1,0 +1,7 @@
+Poor security 1:
+ IAM permissions allow any action to be performed on any S3 resource (s3:*) without any resource-specific restrictions. 
+ This could result in EC2 instances being able to access and manipulate any S3 bucket, including deleting critical data or disclosing sensitive information.
+
+Poor security 2:
+Configure the security group to allow all traffic (IpProtocol permission: -1 for CidrIp: 0.0.0.0/0) and open the SSH port (port 22) for all IP addresses. 
+This poses a big security risk, as anyone can try to connect to your instance.

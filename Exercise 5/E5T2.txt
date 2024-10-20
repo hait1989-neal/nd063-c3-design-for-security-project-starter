@@ -1,0 +1,27 @@
+# Identify at least 2 tools that will allow you to do any of the following
+
+## Scan infrastructure as code templates
+Aqua Trivy : https://github.com/aquasecurity/trivy
+
+### Example vulnerability 
+[WARNING] IAM Role has overly permissive permissions
+  Resource: aws_iam_role.example
+  Action: *
+  Policy: Allow all actions
+
+## Scan AMI’s or containers for OS vulnerabilities
+Microscanner : https://github.com/aquasecurity/microscanner
+
+### Example vulnerability 
+[WARNING] Non-secure communication detected
+  Resource: myapp/config.yaml
+  Description: HTTP endpoint used instead of HTTPS
+
+## Scan an AWS environment for cloud configuration vulnerabilities
+AWS Config
+
+### Example vulnerability
+Resource Type: AWS::IAM::Policy
+Resource ID: my-iam-policy
+Compliance Status: NON_COMPLIANT
+Annotation: The IAM policy 'my-iam-policy' allows all actions on all resources.
